@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prabal Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Hi, I am <strong>Prabal Jain</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">MTS Intern @Netapp</p>
+            <img src="img/prabal_selfie.jpeg" alt="" class="intro__img">
+        </section>
+        
+        
+        <!-- My services -->
+        <section class="my-services" id="services">
+            <h2 class="section__title section__title--services">What I do</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Machine Learning</h3>
+                    <p>I am a Machine Learning Enthusiast, I love to work on Problems that creates an Impact, Check out my Machine Learning Project for more info!</p>
+                </div> <!-- / service -->
+                
+                <div class="service">
+                    <h3>Developer</h3>
+                    <p>Currently I am an MTS Intern @Netapp, I love to work on Backend, Databases, My technical Language Includes Java, Python, C++ etc.</p>
+                </div> <!-- / service -->
+                
+                <div class="service">
+                    <h3>Learner</h3>
+                    <p>I love solving coding problems and Data Structure Click here to check out my coding profiles.</p>
+                </div> <!-- / service -->
+            </div> <!-- / services -->
+            
+            <a href="#work" class="btn">My Work</a>
+        </section>
+        
+        
+        <!-- About me -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Who I am</h2>
+           <p class="section__subtitle section__subtitle--about">Learner || TechGeek || Confident</p>
+           
+           <div class="about-me__body">
+              <p>Hi!! I am 23 Years Old, I have done my <b>Master's in Computer Science and Engineering from IIIT Delhi</b> with CGPA of <strong>8.69</strong> where i explored my interest in <b>Data Science</b>.I have done my <b>Bachelor's in Information technology from IET DAVV</b>, Indore with CGPA of <strong>8.12</strong>.</p>
+               <p>A little bit about my childhood I belong to a City name Shivpuri in Madhya Pradesh I have done my Schooling from Shivpuri, I love to play Guitar, Singing, Travelling... </p>
+
+
+           </div>
+           
+           <img src="img/prabal_standing.jpeg" alt="" class="about-me__img">
+        </section>
+        
+        <!-- My Work -->
+        <section class="my-work" id="work">
+            <h2 class="section__title section__title--work">My work</h2>
+            <p class="section__subtitle section__subtitle--work">Some of my Work</p>
+            
+            <div class="portfolio">
+                <!-- Portfolio item 01 -->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/DFD.jpg" alt="" class="portfolio__img">
+                </a>
+                
+                <!-- Portfolio item 02 -->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/CPA.jpg" alt="" class="portfolio__img">
+                </a>
+                
+                <!-- Portfolio item 03 -->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/CBIR.jpg" alt="" class="portfolio__img">
+                </a>
+                
+            </div>
+        </section>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+
+            <form onsubmit="sendEmail() ; reset(); return false;">
+                <h3> Get in touch!</h3>
+                <input type="text" id = "name" placeholder="Your name" required>
+                <input type="email" id = "email" placeholder="Email ID" required>
+                <textarea id = "message" rows = "4" placeholder="Say Hi to me..."></textarea>
+                <button type="submit">Send</button>
+            </form>
+
+
+            <!-- replace with your own email address -->
+        
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/prabalJain1998">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="www.linkedin.com/in/prabal-jain-1314a0156">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <script>
+            function sendEmail(){
+                 Email.send({
+        Host : "smtp.gmail.com",
+        Username : "prabalnetapptest@gmail.com",
+        Password : "98nAF#d%89",
+        To : 'jainprabal1998@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : "Message from Portfolio Website",
+        Body : "Name :"+document.getElementById("name").value
+                + "<br Email: "+ document.getElementById("email").value
+                + "<br Message: "+ document.getElementById("message").value
+    }).then(
+    message => alert("Thank you !")
+    );
+            }
+        </script>
+        
+    </body>
+</html>
